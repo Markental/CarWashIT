@@ -5,22 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - CarWashIT</title>
 
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
 <body>
     
 
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/"><img src="" width="32" height="32" class="d-inline-block align-top" alt="">Karatayev Olzhas</a>
+        <a class="navbar-brand" href="/"><img src="" width="32" height="32" class="d-inline-block align-top" alt="">CarWashIT</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -30,19 +24,19 @@
                     <a class="nav-link" href="/">Main</a>
                 </li>
                 <li class="nav-item">
-                    @Html.ActionLink("Message", "ShowMessage", "Messages", new { message = "This message is not empty." }, new { @class = "nav-link" })
+                    @Html.ActionLink("Clients", "Index", "Clients", null, new { @class = "nav-link" })
                 </li>
                 <li class="nav-item">
-                    @Html.ActionLink("10+5", "Sum", "Calculator", new { firstNumber = 10, secondNumber = 5 }, new { @class = "nav-link" })
+                    @Html.ActionLink("Cars", "Index", "Cars", null, new { @class = "nav-link" })
                 </li>
                 <li class="nav-item">
-                    @Html.ActionLink("10+23", "Sum", "Calculator", new { firstNumber = 10, secondNumber = 23 }, new { @class = "nav-link" })
+                    @Html.ActionLink("Car numbers", "Index", "CarNumbers", null, new { @class = "nav-link" })
                 </li>
                 <li class="nav-item">
-                    @Html.ActionLink("50/10", "Divide", "Calculator", new { firstNumber = 50, secondNumber = 10 }, new { @class = "nav-link" })
+                    @Html.ActionLink("Orders", "Index", "Orders", null, new { @class = "nav-link" })
                 </li>
                 <li class="nav-item">
-                    @Html.ActionLink("Movies", "Index", "Movies", null, new { @class = "nav-link" })
+                    @Html.ActionLink("Link Cars to Orders", "Index", "OrderCars", null, new { @class = "nav-link" })
                 </li>
             </ul>
 
@@ -57,7 +51,7 @@
     <div class="fixed-bottom">
         <footer class="footer pt-3 pb-2 bg-light">
             <div class="container">
-                <span class="text-muted">2020 &#9400; <a style="text-decoration: none;" href="/">Karatayev Olzhas</a></span>
+                <span class="text-muted">2020 &#9400; <a style="text-decoration: none;" href="/">CarWashIT</a></span>
             </div>
         </footer>
     </div>

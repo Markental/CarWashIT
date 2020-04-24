@@ -17,7 +17,7 @@ namespace CarWashIT.Models
         public Client Client { get; set; }
 
         //One-to-One
-        public CarNumber CarNumber { get; set;}
+        public CarNumber CarNumber { get; set; }
 
         //Many-to-Many
         public IList<OrderCar> OrderCars { get; set; }

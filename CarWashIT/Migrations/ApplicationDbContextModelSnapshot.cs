@@ -273,7 +273,7 @@ namespace CarWashIT.Migrations
 
             modelBuilder.Entity("CarWashIT.Models.CarNumber", b =>
                 {
-                    b.HasOne("CarWashIT.Models.Car")
+                    b.HasOne("CarWashIT.Models.Car", "Car")
                         .WithOne("CarNumber")
                         .HasForeignKey("CarWashIT.Models.CarNumber", "CarId")
                         .OnDelete(DeleteBehavior.Cascade);

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarWashIT.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200424194305_first")]
+    [Migration("20200424202050_first")]
     partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -275,7 +275,7 @@ namespace CarWashIT.Migrations
 
             modelBuilder.Entity("CarWashIT.Models.CarNumber", b =>
                 {
-                    b.HasOne("CarWashIT.Models.Car")
+                    b.HasOne("CarWashIT.Models.Car", "Car")
                         .WithOne("CarNumber")
                         .HasForeignKey("CarWashIT.Models.CarNumber", "CarId")
                         .OnDelete(DeleteBehavior.Cascade);

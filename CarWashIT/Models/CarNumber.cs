@@ -13,6 +13,6 @@ namespace CarWashIT.Models
 
         //One-to-One
         public int CarId { get; set; }
-        public Car car;
+        public Car Car { get; set; }
     }
 }
