@@ -15,4 +15,4 @@ Relational Database = SQLite
 <b>Milestones completed</b><br>
 Milestone 1 ✔ <br>
 Milestone 2 ✔ <br>
-Milestone 3 X <br>
+Milestone 3 ❌<br>
