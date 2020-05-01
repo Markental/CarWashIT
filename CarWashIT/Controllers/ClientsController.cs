@@ -10,6 +10,7 @@ using CarWashIT.Models;
 
 namespace CarWashIT.Controllers
 {
+
     public class ClientsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -17,6 +18,20 @@ namespace CarWashIT.Controllers
         public ClientsController(ApplicationDbContext context)
         {
             _context = context;
+        }
+
+        //[AcceptVerbs("Get", "Post")]
+        [HttpGet("VerifyEmail")]
+        public IActionResult VerifyEmail(string email)
+        {
+            if (_context.Clients.Any(x => x.Email.Equals(email, StringComparison.InvariantCultureIgnoreCase)))
+            {
+                return Json($"Email {email} is already in use.");
+            }
+            else
+            {
+                return Json(true);
+            }
         }
 
         // GET: Clients

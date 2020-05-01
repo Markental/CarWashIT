@@ -46,6 +46,7 @@ namespace CarWashIT.Controllers
         // GET: Orders/Create
         public IActionResult Create()
         {
+            
             return View();
         }
 
@@ -92,7 +93,7 @@ namespace CarWashIT.Controllers
             {
                 return NotFound();
             }
-
+            
             if (ModelState.IsValid)
             {
                 try
