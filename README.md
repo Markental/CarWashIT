@@ -20,3 +20,6 @@ Milestone 3 ✔<br>
 Admin user:<br>
 Email: admin@gmail.com<br>
 Password: qwerty
+
+Done by Karatayev Olzhas and Akimbek Darkhan<br>
+CSSE 1701
