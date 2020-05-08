@@ -39,17 +39,17 @@ namespace CarWashIT
                 options.UseSqlite(Configuration.GetConnectionString("ConnectionName"));
             });
 
-            services.AddIdentity<UserEntity, UserRoleEntity>()
+            services.AddIdentity<UserEntity, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            //services.Configure<IdentityOptions>(options =>
-            //{
-            //    options.Password.RequireDigit = false;
-            //    options.Password.RequiredLength = 6;
-            //    options.Password.RequireLowercase = false;
-            //    options.Password.RequireNonAlphanumeric = false;
-            //    options.Password.RequireUppercase = false;
-            //});
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 6;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -60,14 +60,18 @@ namespace CarWashIT
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
             }
             else
             {
                 app.UseExceptionHandler("/Home/Error");
+                app.UseHsts();
             }
-
-            //app.UseAuthentication();
+            
             app.UseStaticFiles();
+            app.UseAuthentication();
+            
+
             app.UseCookiePolicy();
 
             app.UseMvc(routes =>
@@ -75,7 +79,15 @@ namespace CarWashIT
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
-
+                routes.MapRoute(
+                     name: "account",
+                     template: "{controller=Account}/{action=Login}/{id?}");
+                routes.MapRoute(
+                     name: "roles",
+                     template: "{controller=Roles}/{action=Index}/{id?}");
+                routes.MapRoute(
+                     name: "users",
+                     template: "{controller=Users}/{action=Index}/{id?}");
                 routes.MapRoute(
                     name: "clients",
                     template: "{controller=Clients}/{action=Index}/{id?}");

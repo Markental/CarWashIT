@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CarWashIT.Data;
 using CarWashIT.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CarWashIT.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class OrderCarsController : Controller
     {
         private readonly ApplicationDbContext _context;

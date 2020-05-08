@@ -54,10 +54,10 @@ namespace CarWashIT.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    FirstName = table.Column<string>(nullable: true),
-                    LastName = table.Column<string>(nullable: true),
-                    Email = table.Column<string>(nullable: true),
-                    PhoneNumber = table.Column<string>(nullable: true)
+                    FirstName = table.Column<string>(nullable: false),
+                    LastName = table.Column<string>(nullable: false),
+                    Email = table.Column<string>(nullable: false),
+                    PhoneNumber = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -191,9 +191,9 @@ namespace CarWashIT.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Mark = table.Column<string>(nullable: true),
-                    Model = table.Column<string>(nullable: true),
-                    Type = table.Column<string>(nullable: true),
+                    Mark = table.Column<string>(nullable: false),
+                    Model = table.Column<string>(nullable: false),
+                    Type = table.Column<string>(nullable: false),
                     ClientId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -213,8 +213,8 @@ namespace CarWashIT.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Type = table.Column<string>(nullable: true),
-                    Number = table.Column<string>(nullable: true),
+                    Type = table.Column<string>(nullable: false),
+                    Number = table.Column<string>(nullable: false),
                     CarId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

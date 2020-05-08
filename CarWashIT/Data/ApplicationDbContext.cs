@@ -1,5 +1,6 @@
 ﻿using CarWashIT.Models;
 using CarWashIT.Models.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CarWashIT.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<UserEntity, UserRoleEntity, string>
+    public class ApplicationDbContext : IdentityDbContext<UserEntity, IdentityRole, string>
     {
         public DbSet<Car> Cars { get; set; }
         public DbSet<Client> Clients { get; set; }

@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace CarWashIT.Models.Identity
 {
-    public class UserRoleEntity : IdentityRole
-    {
-        public UserRoleEntity()
-        {
-        }
-    }
+    //public class UserRoleEntity : IdentityRole
+    //{
+    //}
 }
