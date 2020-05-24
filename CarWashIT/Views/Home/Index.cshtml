@@ -3,9 +3,10 @@
     ViewData["Title"] = "CarWashIT";
 }
 
-<div class="jumbotron" style="background: linear-gradient(127deg, rgba(0,0,0,.4), rgba(0,0,0,0.1) 70%)">
+<div class="jumbotron">
     <div class="container">
         <h1 class="display-3">Welcome to CarWashIT!</h1>
+        <p>This is a system intended to help Car Wash management</p>
         <p>
             ░░░░░░░░░░░▄▀▄▀▀▀▀▄▀▄░░░░░░░░░░░░░░░░░░<br>
             ░░░░░░░░░░░█░░░░░░░░▀▄░░░░░░▄░░░░░░░░░░<br>
@@ -31,11 +32,11 @@
     <p>@User.Identity.Name</p>
 
     <form method="post" asp-controller="Account" asp-action="Logout">
-        <input type="submit" value="Выход" />
+        <input class="btn btn-danger" type="submit" value="Выход" />
     </form>
 }
 else
 {
-    <a asp-controller="Account" asp-action="Login">Вход</a>
+    <a asp-controller="Account" asp-action="Login">Вход</a> <br />
     <a asp-controller="Account" asp-action="Register">Регистрация</a>
 }
