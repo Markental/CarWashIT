@@ -21,22 +21,3 @@
         </p>
     </div>
 </div>
-
-@{
-    ViewData["Title"] = "Home Page";
-}
-
-
-@if (User.Identity.IsAuthenticated)
-{
-    <p>@User.Identity.Name</p>
-
-    <form method="post" asp-controller="Account" asp-action="Logout">
-        <input class="btn btn-danger" type="submit" value="Выход" />
-    </form>
-}
-else
-{
-    <a asp-controller="Account" asp-action="Login">Вход</a> <br />
-    <a asp-controller="Account" asp-action="Register">Регистрация</a>
-}
